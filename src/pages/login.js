@@ -106,7 +106,7 @@ handleSignUp = () => {
      //$("#preloader").fadeOut("slow");
         
     })
-    .catch((error) => {
+/*     .catch((error) => {
         //handleFormSubmissionError(error, this);
         console.log(error, "error")
         $("#preloader").fadeOut("slow");
@@ -117,7 +117,7 @@ handleSignUp = () => {
             })
         
             //$("#invalidLogin").fadeIn();
-    })
+    }) */
    
 }
     handleSignIn = () => {

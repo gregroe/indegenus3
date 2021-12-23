@@ -61,7 +61,7 @@ onPageValidation = () => {
         });
 
     callback = (key) => {
-        if(key == 1){
+        if(key === 1){
             this.setState({headerTitle:'Sign Up'})
         }
         else{
@@ -94,7 +94,7 @@ handleSignUp = () => {
     .then((res) => {
         console.log(res)
         console.log(res.data)
-        if(res.status == 200 && res.data.token != null){
+        if(res.status === 200 && res.data.token != null){
             loginUser(res.data.token, res.data, true);               
         }
         else{
@@ -135,7 +135,7 @@ handleSignUp = () => {
         .then((res) => {
             console.log(res)
             console.log(res.data)
-            if(res.status == 200 && res.data.token != null){
+            if(res.status === 200 && res.data.token != null){
                 loginUser(res.data.token, res.data, true);               
             }
             else{

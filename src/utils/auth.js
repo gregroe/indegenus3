@@ -1,6 +1,7 @@
 import React from 'react';
 import {stateKeys} from "../redux/actions";
 import {setReduxState} from "./helpers";
+import {  Navigate } from 'react-router-dom';
 //import { Navigate, Route, withRouter, useHistory } from "react-router-dom";
 //import store from "../redux/store"
 //import { Navigate } from "react-router";
@@ -26,6 +27,7 @@ export function getActiveStore() {
 
 export function loginUser(token, user, redirect) {
    
+    const SERVER_URL = process.env.REACT_APP_SITE_URL;
     const storage = localStorage;
     const _storage = sessionStorage;
     storage.setItem(TOKEN_KEY, token);
@@ -37,24 +39,13 @@ export function loginUser(token, user, redirect) {
     if (redirect) {
         const intended = rememberRoute();
         if (intended) {
-            window.location = intended;
+            window.location.href = intended;
         } 
-        else if(user.securityQuestion){
-            window.location = "/profile";
-            return true;
-        }
-        else if(!user.securityQuestion){
-            window.location = "/security_questions";
-            return true;
-        }
-        // else if(!user.securityQuestion){
-        //     window.location = "/profile";
-        //     return true;
-        // }
         else{
-            return false
+            window.location.href = !user.securityQuestion ? `${SERVER_URL}/security_questions`:`${SERVER_URL}/profile`;
+            return true;
         }
-       
+         return false 
         }
     }
 
@@ -67,12 +58,12 @@ export function RerouteActiveUser() {
 
     //storage.setItem("_IDENTITY_", JSON.stringify(user));
 
-   if(user.role == "User"){
-            window.location = "/profile";
+   if(user.role === "User"){
+           window.location.href = "/profile";
             return true;
         }
-        else if(user == "superteller@kulpay"){
-            window.location = "/superteller/index";
+        else if(user === "superteller@kulpay"){
+            window.location.href = "/superteller/index";
             return true;
         }
         else{

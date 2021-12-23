@@ -1,6 +1,10 @@
 import React from 'react';
 import {stateKeys} from "../redux/actions";
 import {setReduxState} from "./helpers";
+
+// gjr import {Navigate} from "react-router-dom";
+//import {useNavigate} from 'react-router-dom';
+//import {useHistory} from "react-router-dom"
 //import { Navigate, Route, withRouter, useHistory } from "react-router-dom";
 //import store from "../redux/store"
 //import { Navigate } from "react-router";
@@ -25,7 +29,9 @@ export function getActiveStore() {
 
 
 export function loginUser(token, user, redirect) {
-   
+    //gjr let history = useHistory();
+    //const Navigate = useNavigate();
+
     const storage = localStorage;
     const _storage = sessionStorage;
     storage.setItem(TOKEN_KEY, token);
@@ -40,13 +46,33 @@ export function loginUser(token, user, redirect) {
             window.location = intended;
         } 
         else if(user.securityQuestion){
-            window.location = "/profile";
+                     
+           window.location = "/profile";
+
+            //gjr
+            //gjr return <Navigate replace to="/profile" />
+            //gjr this.props.history.push('/profile')
+            //gjr Navigate('/profile')
+            //gjr history.push('/profile')
+            //Navigate('/profile');
+
             return true;
+           
         }
         else if(!user.securityQuestion){
+            
             window.location = "/security_questions";
+
+            //gjr
+            //gjr this.props.history.push('/security_questions')
+            //gjr Navigate('/security_questions')
+            //gjr history.push('security_questions')
+            //Navigate('/security_questions');
+
             return true;
+            
         }
+        
         // else if(!user.securityQuestion){
         //     window.location = "/profile";
         //     return true;

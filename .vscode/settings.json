@@ -2,6 +2,10 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
+<<<<<<< HEAD
     ],
     "appService.defaultWebAppToDeploy": "None"
+=======
+    ]
+>>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
 }

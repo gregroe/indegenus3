@@ -61,7 +61,7 @@ onPageValidation = () => {
         });
 
     callback = (key) => {
-        if(key == 1){
+        if(key === 1){
             this.setState({headerTitle:'Sign Up'})
         }
         else{
@@ -94,8 +94,13 @@ handleSignUp = () => {
     .then((res) => {
         console.log(res)
         console.log(res.data)
+<<<<<<< HEAD
         if(res.status == 200 && res.data.token != null){
             loginUser(res.data.token, res.data, true,this.props);               
+=======
+        if(res.status === 200 && res.data.token != null){
+            loginUser(res.data.token, res.data, true);               
+>>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
         }
         else{
             $("#preloader").fadeOut("slow");
@@ -106,7 +111,7 @@ handleSignUp = () => {
      //$("#preloader").fadeOut("slow");
         
     })
-    .catch((error) => {
+/*     .catch((error) => {
         //handleFormSubmissionError(error, this);
         console.log(error, "error")
         $("#preloader").fadeOut("slow");
@@ -117,7 +122,7 @@ handleSignUp = () => {
             })
         
             //$("#invalidLogin").fadeIn();
-    })
+    }) */
    
 }
     handleSignIn = () => {
@@ -135,7 +140,7 @@ handleSignUp = () => {
         .then((res) => {
             console.log(res)
             console.log(res.data)
-            if(res.status == 200 && res.data.token != null){
+            if(res.status === 200 && res.data.token != null){
                 loginUser(res.data.token, res.data, true);               
             }
             else{

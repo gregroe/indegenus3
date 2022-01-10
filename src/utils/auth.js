@@ -1,6 +1,7 @@
 import React from 'react';
 import {stateKeys} from "../redux/actions";
 import {setReduxState} from "./helpers";
+import {  Navigate } from 'react-router-dom';
 //import { Navigate, Route, withRouter, useHistory } from "react-router-dom";
 //import store from "../redux/store"
 //import { Navigate } from "react-router";
@@ -26,11 +27,17 @@ export function getActiveStore() {
 // }
 
 
+<<<<<<< HEAD
 export function loginUser(token, user, redirect, props) {
     //const propsvar = props;
     //let history = useHistory();
     //let navigate = useNavigate();
 
+=======
+export function loginUser(token, user, redirect) {
+   
+    const SERVER_URL = process.env.REACT_APP_SITE_URL;
+>>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
     const storage = localStorage;
     const _storage = sessionStorage;
     storage.setItem(TOKEN_KEY, token);
@@ -42,8 +49,9 @@ export function loginUser(token, user, redirect, props) {
     if (redirect) {
         const intended = rememberRoute();
         if (intended) {
-            window.location = intended;
+            window.location.href = intended;
         } 
+<<<<<<< HEAD
         else if(user.securityQuestion){
             //window.location.href = 'https://ingegenusfrontend.azurewebsites.net/profile';
            //window.location.href = '/profile'
@@ -65,10 +73,13 @@ export function loginUser(token, user, redirect, props) {
         //     window.location = "/profile";
         //     return true;
         // }
+=======
+>>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
         else{
-            return false
+            window.location.href = !user.securityQuestion ? `${SERVER_URL}/security_questions`:`${SERVER_URL}/profile`;
+            return true;
         }
-       
+         return false 
         }
     }
 
@@ -81,12 +92,12 @@ export function RerouteActiveUser() {
 
     //storage.setItem("_IDENTITY_", JSON.stringify(user));
 
-   if(user.role == "User"){
-            window.location = "/profile";
+   if(user.role === "User"){
+           window.location.href = "/profile";
             return true;
         }
-        else if(user == "superteller@kulpay"){
-            window.location = "/superteller/index";
+        else if(user === "superteller@kulpay"){
+            window.location.href = "/superteller/index";
             return true;
         }
         else{

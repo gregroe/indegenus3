@@ -46,6 +46,7 @@ export class App extends Component {
                 ) : (
                     <Router>
                         <Routes>
+<<<<<<< HEAD
                             <Route path="/" element={<Splash />} exact />
                                 <Route path="welcome" element={<ScreenOne />} exact/>
                                 <Route path="choose_data" element={<ChooseData />} exact />
@@ -60,6 +61,22 @@ export class App extends Component {
                                 <Route path="test_lang" element={<TestLang />} />
                                 <Route path="update_language" element={<UpdateLanguage />} />
                                 <Route path="updateSurveyEntries" element={<UpdateSurveyEntries />} />
+=======
+                            <Route path= "/" element={<Splash />} exact />
+                                <Route path= "welcome" element={<ScreenOne />} exact />
+                                <Route path= "choose_data" element={<ChooseData />} exact />
+                                <Route path= "survey" element={<Survey />} />
+                                <Route path= "surveyQuestions" element={<SurveyQuestions />} />
+                                <Route path= "user_validation" element={<Login />} />
+                                <Route path= "security_questions" element={<SecurityQuestions />} />
+                                <Route path= "profile" element={<Profile />} />
+                                <Route path= "survey_complete"  element={<SurveyComplete />} />
+                                <Route path= "healthReport" element={<HealthReport />} />
+                                <Route path= "profile_setup" element={<ProfileSetup />} />
+                                <Route path= "test_lang" element={<TestLang />} />
+                                <Route path= "update_language" element={<UpdateLanguage />} />
+                                <Route path= "updateSurveyEntries" element={<UpdateSurveyEntries />} />
+>>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
                         </Routes>
                     </Router>
                 )}

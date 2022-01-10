@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         
+<<<<<<< HEAD
         {
             "name": "Attach to Chrome",
             "port": 3000,
@@ -12,6 +13,9 @@
             "type": "pwa-chrome",
             "webRoot": "${workspaceFolder}"
         },
+=======
+        
+>>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
         {
             "type": "pwa-msedge",
             "request": "launch",

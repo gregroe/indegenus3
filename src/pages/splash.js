@@ -6,6 +6,7 @@ import {stateKeys} from "../redux/actions"
 import {userLoggedIn, loginUser} from "../utils/auth"
 import { reduxState, setReduxState } from "../utils/helpers";
 import { width } from "dom-helpers";
+
 class Splash extends React.Component {
     state = {
         hasError: false,

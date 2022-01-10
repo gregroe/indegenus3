@@ -20,9 +20,7 @@ const Endpoint = {
         let token = getUserToken();
         if (token)
             axios.defaults.headers.common['Authorization'] = token;
-        //axios.defaults.baseURL = "http://10.211.55.3/api";        
-        //axios.defaults.baseURL = "https://indybackend.studyaccess.net/api";
-        axios.defaults.baseURL = "https://indegenus-backend.azurewebsites.net/api";
+        axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
         
         // Intercept 401 HTTP Error code in API
         axios.interceptors.response.use(response => response, (error) => {

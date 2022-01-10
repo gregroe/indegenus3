@@ -13,6 +13,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { stateKeys } from "../redux/actions";
 import { reduxState, validateEmail } from "../utils/helpers";
 import { Drawer, Button } from "antd";
+import {  Navigate } from 'react-router-dom';
 
 
 const { TabPane } = Tabs;
@@ -70,6 +71,8 @@ onPageValidation = () => {
         console.log(key);
     };
 handleSignUp = () => {
+    let navigate = useNavigate();
+    navigate("/security_questions");
     if(this.state.email == null || this.state.pass == null || parseInt(this.state.regionId) <= 0){
         this.loadDataError("Enter email address and password")
         return;
@@ -94,13 +97,8 @@ handleSignUp = () => {
     .then((res) => {
         console.log(res)
         console.log(res.data)
-<<<<<<< HEAD
         if(res.status == 200 && res.data.token != null){
             loginUser(res.data.token, res.data, true,this.props);               
-=======
-        if(res.status === 200 && res.data.token != null){
-            loginUser(res.data.token, res.data, true);               
->>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
         }
         else{
             $("#preloader").fadeOut("slow");
@@ -126,6 +124,7 @@ handleSignUp = () => {
    
 }
     handleSignIn = () => {
+        
         if(this.state.email == null || this.state.pass == null){
             this.loadDataError("Enter email address and password")
             return;

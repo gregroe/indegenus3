@@ -1,7 +1,7 @@
 import React from 'react';
 import {stateKeys} from "../redux/actions";
 import {setReduxState} from "./helpers";
-import {  Navigate } from 'react-router-dom';
+
 //import { Navigate, Route, withRouter, useHistory } from "react-router-dom";
 //import store from "../redux/store"
 //import { Navigate } from "react-router";
@@ -27,17 +27,11 @@ export function getActiveStore() {
 // }
 
 
-<<<<<<< HEAD
 export function loginUser(token, user, redirect, props) {
     //const propsvar = props;
-    //let history = useHistory();
+   // let history = useHistory();
     //let navigate = useNavigate();
 
-=======
-export function loginUser(token, user, redirect) {
-   
-    const SERVER_URL = process.env.REACT_APP_SITE_URL;
->>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
     const storage = localStorage;
     const _storage = sessionStorage;
     storage.setItem(TOKEN_KEY, token);
@@ -51,11 +45,10 @@ export function loginUser(token, user, redirect) {
         if (intended) {
             window.location.href = intended;
         } 
-<<<<<<< HEAD
         else if(user.securityQuestion){
             //window.location.href = 'https://ingegenusfrontend.azurewebsites.net/profile';
            //window.location.href = '/profile'
-            window.location = "/profile";
+           // window.location = "/profile";
            //propsvar.history.push("/profile");
            //history.push('/profile')
            //navigate("/profile");
@@ -63,7 +56,7 @@ export function loginUser(token, user, redirect) {
         }
         else if(!user.securityQuestion){
             //window.location.href = 'https://ingegenusfrontend.azurewebsites.net/security_questions';
-            window.location = "/security_questions";
+            //window.location = "/security_questions";
             //propsvar.history.push("/security_questions");
             //history.push('/security_questions')
             //navigate("/security_questions");
@@ -73,10 +66,8 @@ export function loginUser(token, user, redirect) {
         //     window.location = "/profile";
         //     return true;
         // }
-=======
->>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
         else{
-            window.location.href = !user.securityQuestion ? `${SERVER_URL}/security_questions`:`${SERVER_URL}/profile`;
+           // window.location.href = !user.securityQuestion ? `${SERVER_URL}/security_questions`:`${SERVER_URL}/profile`;
             return true;
         }
          return false 

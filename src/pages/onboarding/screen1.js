@@ -91,7 +91,6 @@ class ScreenOne extends React.Component {
                                 <h4 style={{ color: "#FFF", fontWeight: "500", fontSize: "20px", marginTop: "-12px" }}>Health Risk Assesment</h4>
                             
                                 <div className="text-center" style={{marginTop:'40px'}}>
-<<<<<<< HEAD
                           
                                     <Link to ="/choose_data" id="start__btn">
                                     <button  style={{ width: "100%", height: "45px", background: "#FFB43A", border: "none", borderRadius: "12px", fontSize: "18px", fontWeight: "500", color:"#000" }}>Start</button>
@@ -99,17 +98,6 @@ class ScreenOne extends React.Component {
 
                                 </div> 
 
-=======
-{/*                                 <a href="/choose_data" id="start__btn">
-                                    <button  style={{ width: "100%", height: "45px", background: "#FFB43A", border: "none", borderRadius: "12px", fontSize: "18px", fontWeight: "500", color:"#000" }}>Start</button>
-                                    </a> */}
-
-                                    <Link to ="/choose_data" id="start__btn">
-                                    <button  style={{ width: "100%", height: "45px", background: "#FFB43A", border: "none", borderRadius: "12px", fontSize: "18px", fontWeight: "500", color:"#000" }}>Start</button>
-                                    </Link>
-
-                                </div>
->>>>>>> f27fd3ad2e27ad1d8e95a03a67fda9c033867436
                             </div>
                         </div>
                     </div>
